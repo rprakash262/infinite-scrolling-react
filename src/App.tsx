@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { PostCard } from "./components/postCard/PostCard";
 import "./App.css";
 import { debounce } from "./utils/debounce";
+import { Spinner } from "./components/postCard/spinner/Spinner";
 
 interface Post {
   id: number;
@@ -84,7 +85,7 @@ function App() {
           views={post.views}
         />
       ))}
-      {loading && <h2>Loading....</h2>}
+      {loading && <Spinner />}
     </div>
   );
 }
